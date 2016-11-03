@@ -1,7 +1,12 @@
 #import <Foundation/Foundation.h>
 #import <Cordova/CDVPlugin.h>
 #import <Cordova/CDVAvailability.h>
+
+#ifdef USE_COCOAPODS
+#import <SSZipArchive/SSZipArchive.h>
+#else
 #import "SSZipArchive.h"
+#endif
 
 enum ProgressState {
     Stopped = 0,
