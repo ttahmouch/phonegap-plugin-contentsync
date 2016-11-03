@@ -1,6 +1,12 @@
 #import "ContentSync.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 
+#ifdef USE_COCOAPODS
+#import <SSZipArchive/SSZipArchive.h>
+#else
+#import "SSZipArchive.h"
+#endif
+
 @implementation ContentSyncTask
 
 - (ContentSyncTask *)init {
@@ -16,6 +22,9 @@
 
     return self;
 }
+@end
+
+@interface ContentSync () <SSZipArchiveDelegate>
 @end
 
 @implementation ContentSync
